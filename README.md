@@ -4,7 +4,20 @@
 
 A native macOS & iOS app for browsing, reading, and editing AI agent memory files — beautifully rendered, instantly accessible.
 
+[![Ko-fi](https://img.shields.io/badge/Support%20on-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/nvwalj)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Platforms](https://img.shields.io/badge/Platforms-macOS%2015%20%7C%20iOS%2017-lightgrey.svg)]()
+
+> The only **native** macOS & iOS app for browsing your AI agent's memory.
+> Built for **Claude Code**, **OpenClaw**, **Codex**, **Cursor**, **Gemini**, and more.
+
 ![AI Memory Reader](home.png)
+
+## ❤️ Support This Project
+
+AI Memory Reader is free and open source. If it saves you time or you'd like to see it evolve, please consider supporting development on **[Ko-fi ↗](https://ko-fi.com/nvwalj)** — every coffee fuels new features.
+
+<a href='https://ko-fi.com/nvwalj' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 ## Features
 

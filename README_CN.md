@@ -2,7 +2,20 @@
 
 一款原生 macOS & iOS 应用，用于浏览、阅读和编辑 AI 代理的记忆文件 —— 渲染美观，随时可用。
 
+[![Ko-fi](https://img.shields.io/badge/赞助-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/nvwalj)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Platforms](https://img.shields.io/badge/平台-macOS%2015%20%7C%20iOS%2017-lightgrey.svg)]()
+
+> 唯一一款**原生** macOS / iOS 应用，用来浏览你的 AI 代理记忆文件。
+> 专为 **Claude Code**、**OpenClaw**、**Codex**、**Cursor**、**Gemini** 等工具打造。
+
 ![AI Memory Reader](home.png)
+
+## ❤️ 支持本项目
+
+AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者你希望看到它继续演进，欢迎到 **[Ko-fi ↗](https://ko-fi.com/nvwalj)** 请作者喝杯咖啡 —— 每一杯都会变成新的功能。
+
+<a href='https://ko-fi.com/nvwalj' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='在 Ko-fi 上请作者喝咖啡' /></a>
 
 ## 功能特性
 

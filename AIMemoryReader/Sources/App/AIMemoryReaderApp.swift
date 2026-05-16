@@ -1,4 +1,7 @@
 import SwiftUI
+#if os(macOS)
+import AppKit
+#endif
 
 extension Notification.Name {
     static let editorManualSave = Notification.Name("editorManualSave")
@@ -132,6 +135,36 @@ struct AIMemoryReaderApp: App {
                     appState.openFolder()
                 }
                 .keyboardShortcut("2", modifiers: .command)
+            }
+
+            CommandGroup(replacing: .help) {
+                Button("AI Memory Reader Help") {
+                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader#readme") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+
+                Divider()
+
+                Button("Support Development on Ko-fi…") {
+                    if let url = URL(string: "https://ko-fi.com/nvwalj") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+
+                Button("Star on GitHub…") {
+                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
+
+                Divider()
+
+                Button("Report an Issue…") {
+                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader/issues/new") {
+                        NSWorkspace.shared.open(url)
+                    }
+                }
             }
         }
         #endif
