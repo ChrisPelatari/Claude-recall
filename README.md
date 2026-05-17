@@ -71,10 +71,13 @@ Also supports opening any local folder or individual `.md` / `.json` file. Claud
 
 ## Companion: Claude Code Memory Pack
 
-AI Memory Reader is the viewer. If you also need the content — battle-tested `CLAUDE.md` templates, lifecycle hooks, and slash commands — see the [**Claude Code Memory Pack**](https://github.com/nvwalj/claude-code-memory-pack):
+AI Memory Reader is the viewer. The content sibling is [**Claude Code Memory Pack**](https://github.com/nvwalj/claude-code-memory-pack) — 8 stack-specific `CLAUDE.md` templates (Next.js, Vite+React, Node/TS, FastAPI, Python ML, Swift macOS, Swift iOS, Go), 5 lifecycle hooks, 6 slash commands, and a 5-page setup PDF. Hand-written, fully free, MIT licensed.
 
-- **Free preview repo** — one full example from each section (template, hook, slash command) + setup-guide TOC. MIT licensed.
-- **Full pack — $3** — 8 stack-specific templates (Next.js, Vite+React, Node/TS, FastAPI, Python ML, Swift macOS, Swift iOS, Go), 5 hooks, 6 slash commands, 12-page PDF setup guide. [Buy now on Ko-fi →](https://ko-fi.com/s/19aebc9e5f)
+Install as a Claude Code plugin in one line:
+
+```
+/plugin marketplace add nvwalj/claude-code-memory-pack
+```
 
 ## Installation
 
