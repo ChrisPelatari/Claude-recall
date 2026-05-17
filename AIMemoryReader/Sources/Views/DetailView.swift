@@ -333,7 +333,7 @@ struct MarkdownDetailView: View {
             rawContent = editableContent
             if fileNode.isJSON {
                 tocEntries = []
-                sections = [MarkdownSection(id: "json-content", content: "```json\n\(editableContent)\n```")]
+                sections = Self.makeJSONSections(editableContent)
             } else {
                 tocEntries = TOCParser.parse(editableContent)
                 sections = MarkdownSplitter.split(editableContent, entries: tocEntries)
@@ -513,7 +513,7 @@ struct MarkdownDetailView: View {
                 rawContent = displayText
                 editableContent = displayText
                 tocEntries = []
-                sections = [MarkdownSection(id: "json-content", content: "```json\n\(displayText)\n```")]
+                sections = Self.makeJSONSections(displayText)
             } else {
                 rawContent = text
                 editableContent = text
@@ -526,12 +526,75 @@ struct MarkdownDetailView: View {
     }
 
     private static func prettyPrintJSON(_ text: String) -> String? {
-        guard let data = text.data(using: .utf8),
-              let json = try? JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]),
-              let prettyData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]),
-              let prettyString = String(data: prettyData, encoding: .utf8)
-        else { return nil }
-        return prettyString
+        // Single-object JSON: fast path.
+        if let data = text.data(using: .utf8),
+           let json = try? JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]),
+           let prettyData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]),
+           let prettyString = String(data: prettyData, encoding: .utf8) {
+            return prettyString
+        }
+        // NDJSON / JSONL — Claude's telemetry files use `.json` but contain one object per line.
+        let lines = text.split(separator: "\n", omittingEmptySubsequences: false)
+        guard lines.count > 1 else { return nil }
+        var rendered: [String] = []
+        rendered.reserveCapacity(lines.count)
+        var parsedAny = false
+        for (idx, line) in lines.enumerated() {
+            let trimmed = line.trimmingCharacters(in: .whitespaces)
+            guard !trimmed.isEmpty else { continue }
+            if let data = trimmed.data(using: .utf8),
+               let json = try? JSONSerialization.jsonObject(with: data, options: [.fragmentsAllowed]),
+               let prettyData = try? JSONSerialization.data(withJSONObject: json, options: [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]),
+               let prettyString = String(data: prettyData, encoding: .utf8) {
+                rendered.append("// line \(idx + 1)\n\(prettyString)")
+                parsedAny = true
+            } else {
+                rendered.append("// line \(idx + 1) (unparsed)\n\(trimmed)")
+            }
+        }
+        return parsedAny ? rendered.joined(separator: "\n\n") : nil
+    }
+
+    /// Chunk large JSON into multiple MarkdownSections so LazyVStack can lazy-render.
+    /// MarkdownUI's code-block view builds the text as Text + Text + Text… per token, which
+    /// SwiftUI then resolves recursively. ~5000 chained Texts blows the main-thread stack
+    /// (observed crash: `ConcatenatedTextStorage.resolve` recursing 5414 levels). Keep
+    /// chunks small enough that a single section never produces that many Text nodes:
+    /// ~30 lines / ~3000 chars is comfortably under the threshold even for dense JSON.
+    private static func makeJSONSections(_ text: String) -> [MarkdownSection] {
+        let linesPerChunk = 30
+        let maxCharsPerChunk = 3_000
+        let lines = text.split(separator: "\n", omittingEmptySubsequences: false).map(String.init)
+        if lines.count <= linesPerChunk && text.count <= maxCharsPerChunk {
+            return [MarkdownSection(id: "json-content", content: "```json\n\(text)\n```")]
+        }
+        var sections: [MarkdownSection] = []
+        var idx = 0
+        while idx < lines.count {
+            var end = min(idx + linesPerChunk, lines.count)
+            var chunk = lines[idx..<end].joined(separator: "\n")
+            // Hard cap on chunk size — guards against single mega-lines (e.g. minified JSON).
+            while chunk.count > maxCharsPerChunk && end - idx > 1 {
+                end -= 1
+                chunk = lines[idx..<end].joined(separator: "\n")
+            }
+            // Last-resort: a single line longer than maxCharsPerChunk — break it by characters.
+            if chunk.count > maxCharsPerChunk && end - idx == 1 {
+                var remaining = chunk
+                while !remaining.isEmpty {
+                    let take = min(maxCharsPerChunk, remaining.count)
+                    let upper = remaining.index(remaining.startIndex, offsetBy: take)
+                    let piece = String(remaining[remaining.startIndex..<upper])
+                    sections.append(MarkdownSection(id: "json-chunk-\(sections.count)", content: "```json\n\(piece)\n```"))
+                    remaining = String(remaining[upper...])
+                }
+                idx = end
+                continue
+            }
+            sections.append(MarkdownSection(id: "json-chunk-\(sections.count)", content: "```json\n\(chunk)\n```"))
+            idx = end
+        }
+        return sections
     }
 
     private func errorView(_ message: String) -> some View {

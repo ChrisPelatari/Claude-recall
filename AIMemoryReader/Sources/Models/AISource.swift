@@ -67,13 +67,6 @@ extension AISource {
 
     static let allSources: [AISource] = [
         AISource(
-            id: "openclaw",
-            name: "OpenClaw",
-            iconName: "terminal",
-            color: .orange,
-            path: ".openclaw/workspace"
-        ),
-        AISource(
             id: "claude",
             name: "Claude Code",
             iconName: "terminal",
@@ -95,6 +88,13 @@ extension AISource {
             path: ".gemini"
         ),
         AISource(
+            id: "cursor",
+            name: "Cursor",
+            iconName: "terminal",
+            color: .cyan,
+            path: ".cursor"
+        ),
+        AISource(
             id: "continue",
             name: "Continue",
             iconName: "terminal",
@@ -102,11 +102,11 @@ extension AISource {
             path: ".continue"
         ),
         AISource(
-            id: "cursor",
-            name: "Cursor",
+            id: "copilot",
+            name: "GitHub Copilot",
             iconName: "terminal",
-            color: .cyan,
-            path: ".cursor"
+            color: Color(white: 0.35),
+            path: ".config/github-copilot"
         ),
         AISource(
             id: "aider",
@@ -116,11 +116,11 @@ extension AISource {
             path: ".aider"
         ),
         AISource(
-            id: "copilot",
-            name: "GitHub Copilot",
+            id: "openclaw",
+            name: "OpenClaw",
             iconName: "terminal",
-            color: Color(white: 0.35),
-            path: ".config/github-copilot"
+            color: .orange,
+            path: ".openclaw/workspace"
         ),
     ]
 
