@@ -29,7 +29,8 @@ AI Memory Reader is free and open source. If it saves you time or you'd like to 
 
 ### Reading
 - **Beautiful Markdown Rendering** — GitHub-style with code blocks, tables, lists, and more (powered by MarkdownUI)
-- **Auto-Discover AI Sources** — Automatically detects OpenClaw memory directories
+- **Auto-Discover AI Sources** — Automatically detects Claude Code, Codex, Gemini, Cursor, Continue, GitHub Copilot, Aider, and OpenClaw memory directories
+- **JSON / JSONL Viewer** — Pretty-prints Claude's session telemetry files (`~/.claude/projects/*.json`) with chunked rendering to handle multi-MB transcripts
 - **Today Panel** — Highlights today's memory file for quick access
 - **File Tree Navigation** — Browse markdown files with an expandable sidebar
 - **Table of Contents** — Right sidebar TOC with click-to-jump navigation
@@ -57,9 +58,16 @@ AI Memory Reader is free and open source. If it saves you time or you'd like to 
 
 | AI Source | Directory | Key Files |
 |-----------|-----------|-----------|
+| Claude Code | `~/.claude/` | CLAUDE.md, memory/*.md, plus `CLAUDE.md` files in project trees |
+| Codex | `~/.codex/` | AGENTS.md, instructions.md |
+| Gemini | `~/.gemini/` | GEMINI.md |
+| Cursor | `~/.cursor/` | rules |
+| Continue | `~/.continue/` | config.md |
+| GitHub Copilot | `~/.config/github-copilot/` | config files |
+| Aider | `~/.aider/` | config files |
 | OpenClaw | `~/.openclaw/workspace/` | MEMORY.md, SOUL.md, AGENTS.md, memory/*.md |
 
-Also supports opening any local folder or individual .md file.
+Also supports opening any local folder or individual `.md` / `.json` file. Claude's JSONL telemetry files (e.g. `~/.claude/projects/*.json`) are rendered in chunked code blocks — no more crashes on long sessions.
 
 ## Companion: Claude Code Memory Pack
 
@@ -72,7 +80,7 @@ AI Memory Reader is the viewer. If you also need the content — battle-tested `
 
 ### Option 1 — Download (fastest, no Xcode needed)
 
-1. Download the latest [`AI-Memory-Reader-0.4.0-universal.zip`](https://github.com/nvwalj/ai-memory-reader/releases/latest) — universal binary, runs on both Apple Silicon and Intel Macs.
+1. Download the latest **[`AIMemoryReader-vX.Y.Z-universal.zip`](https://github.com/nvwalj/ai-memory-reader/releases/latest)** from the releases page — universal binary (Apple Silicon + Intel).
 2. Unzip and drag `AI Memory Reader.app` into `/Applications`.
 3. **First launch:** macOS will say *"unidentified developer"* because the binary is ad-hoc signed (not yet notarized). Two ways to bypass:
    - **GUI:** right-click the app in Finder → **Open** → click **Open** in the dialog. Once approved, double-click works forever.
@@ -131,7 +139,7 @@ aimr open ~/.openclaw/workspace/MEMORY.md --heading "About Me"
 | ⌘E | Toggle edit/read mode |
 | ⌘S | Save (in edit mode) |
 | ⌘F | Focus search |
-| ⌘1 | Switch to OpenClaw source |
+| ⌘1 | Switch to the first detected AI source (Claude Code by default) |
 | ⌘2 | Open local files |
 
 ## License

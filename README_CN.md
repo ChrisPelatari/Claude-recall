@@ -54,14 +54,14 @@ AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者
 
 | AI 源 | 目录 | 关键文件 |
 |-------|------|---------|
-| OpenClaw | `~/.openclaw/workspace/` | MEMORY.md, SOUL.md, AGENTS.md, memory/*.md |
-| Claude Code | `~/.claude/` | CLAUDE.md |
+| Claude Code | `~/.claude/` | CLAUDE.md, memory/*.md，以及项目树里的 `CLAUDE.md` |
 | Codex | `~/.codex/` | AGENTS.md, instructions.md |
 | Gemini | `~/.gemini/` | GEMINI.md |
-| Continue | `~/.continue/` | config.md |
 | Cursor | `~/.cursor/` | rules |
-| Aider | `~/.aider/` | 配置文件 |
+| Continue | `~/.continue/` | config.md |
 | GitHub Copilot | `~/.config/github-copilot/` | 配置文件 |
+| Aider | `~/.aider/` | 配置文件 |
+| OpenClaw | `~/.openclaw/workspace/` | MEMORY.md, SOUL.md, AGENTS.md, memory/*.md |
 
 仅显示本机上实际存在且包含 .md 文件的目录。也支持手动打开任意本地文件夹或单个 .md 文件。
 
@@ -69,7 +69,7 @@ AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者
 
 ### 方案 1 — 下载（最快，不需要 Xcode）
 
-1. 下载最新 [`AI-Memory-Reader-0.4.0-universal.zip`](https://github.com/nvwalj/ai-memory-reader/releases/latest) — 通用二进制，Apple Silicon 和 Intel Mac 都能跑。
+1. 从 [releases 页面](https://github.com/nvwalj/ai-memory-reader/releases/latest)下载最新的 **`AIMemoryReader-vX.Y.Z-universal.zip`** — 通用二进制，Apple Silicon 和 Intel Mac 都能跑。
 2. 解压后把 `AI Memory Reader.app` 拖到 `/Applications`。
 3. **首次启动：** macOS 会提示"未识别的开发者"（应用是 ad-hoc 签名，尚未公证）。两种绕过方式：
    - **图形界面：** Finder 里右键 app → **打开** → 弹窗里再点 **打开**。一次通过后双击就能用了。
@@ -128,7 +128,7 @@ aimr open ~/.openclaw/workspace/MEMORY.md --heading "关于我"
 | ⌘E | 切换编辑/阅读模式 |
 | ⌘S | 保存（编辑模式下） |
 | ⌘F | 聚焦搜索 |
-| ⌘1 | 切换到 OpenClaw 源 |
+| ⌘1 | 切换到首个检测到的 AI 源（默认 Claude Code） |
 | ⌘2 | 打开本地文件 |
 
 ## 许可证
