@@ -61,6 +61,13 @@ AI Memory Reader is free and open source. If it saves you time or you'd like to 
 
 Also supports opening any local folder or individual .md file.
 
+## Companion: Claude Code Memory Pack
+
+AI Memory Reader is the viewer. If you also need the content — battle-tested `CLAUDE.md` templates, lifecycle hooks, and slash commands — see the [**Claude Code Memory Pack**](https://github.com/nvwalj/claude-code-memory-pack):
+
+- **Free preview repo** — one full example from each section (template, hook, slash command) + setup-guide TOC. MIT licensed.
+- **Full pack — $9** — 8 stack-specific templates (Next.js, Vite+React, Node/TS, FastAPI, Python ML, Swift macOS, Swift iOS, Go), 5 hooks, 6 slash commands, 12-page PDF setup guide. [Get it on Ko-fi →](https://ko-fi.com/nvwalj/shop)
+
 ## Installation
 
 ### Option 1 — Download (fastest, no Xcode needed)
