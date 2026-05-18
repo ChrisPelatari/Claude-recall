@@ -44,7 +44,7 @@ final class BookmarkStore: @unchecked Sendable {
     func requestAccess(
         prompt: String = "Grant access",
         message: String = "Choose your home folder so AI Memory Reader can read CLAUDE.md, AGENTS.md, and other AI agent memory files inside it. AIMR only reads what's in this folder — it never sends anything off your Mac.",
-        startAt: URL = FileManager.default.homeDirectoryForCurrentUser
+        startAt: URL? = nil
     ) -> URL? {
         #if os(macOS)
         let panel = NSOpenPanel()
@@ -54,7 +54,7 @@ final class BookmarkStore: @unchecked Sendable {
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
-        panel.directoryURL = startAt
+        panel.directoryURL = startAt ?? FileManager.default.homeDirectoryForCurrentUser
         guard panel.runModal() == .OK, let url = panel.url else { return nil }
         return persist(url: url) ? url : nil
         #else
@@ -151,8 +151,14 @@ final class BookmarkStore: @unchecked Sendable {
             startScope(for: url, at: originalPath)
             if stale {
                 // Refresh the stored bookmark so we don't carry forever-stale data.
+                let refreshOptions: URL.BookmarkCreationOptions
+                #if os(macOS)
+                refreshOptions = .withSecurityScope
+                #else
+                refreshOptions = []
+                #endif
                 if let refreshed = try? url.bookmarkData(
-                    options: resolveOptions == .withSecurityScope ? .withSecurityScope : [],
+                    options: refreshOptions,
                     includingResourceValuesForKeys: nil,
                     relativeTo: nil
                 ) {
