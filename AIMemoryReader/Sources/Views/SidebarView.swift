@@ -286,6 +286,36 @@ struct SidebarView: View {
     private var emptyState: some View {
         VStack(spacing: 12) {
             Spacer()
+            #if os(macOS)
+            if appState.needsSandboxGrant {
+                Image(systemName: "lock.shield")
+                    .font(.system(size: 40))
+                    .foregroundColor(.secondary)
+                Text("Grant access to your home folder")
+                    .font(.title3)
+                    .foregroundColor(.primary)
+                Text("AI Memory Reader needs your permission to read CLAUDE.md, AGENTS.md, and other AI agent memory files inside your home folder. AIMR only reads — it never sends anything off your Mac.")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
+                Button("Grant Access…") {
+                    appState.grantSandboxAccess()
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.top, 4)
+            } else {
+                Image(systemName: "doc.text.magnifyingglass")
+                    .font(.system(size: 40))
+                    .foregroundColor(.secondary)
+                Text("No folder opened")
+                    .font(.title3)
+                    .foregroundColor(.secondary)
+                Text("Select an AI source or ⌘O to open a folder")
+                    .font(.caption)
+                    .foregroundColor(.secondary.opacity(0.6))
+            }
+            #else
             Image(systemName: "doc.text.magnifyingglass")
                 .font(.system(size: 40))
                 .foregroundColor(.secondary)
@@ -295,6 +325,7 @@ struct SidebarView: View {
             Text("Select an AI source or ⌘O to open a folder")
                 .font(.caption)
                 .foregroundColor(.secondary.opacity(0.6))
+            #endif
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

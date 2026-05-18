@@ -25,6 +25,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         pendingFileURLs.removeAll()
     }
 
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        // Resolve persisted security-scoped bookmarks before any file access happens
+        // in the sandboxed build. No-op for the direct-distribution (unsandboxed) build.
+        BookmarkStore.shared.restoreOnLaunch()
+    }
+
+    func applicationWillTerminate(_ notification: Notification) {
+        BookmarkStore.shared.stopAllAccess()
+    }
+
     func application(_ application: NSApplication, open urls: [URL]) {
         for url in urls where url.isFileURL {
             if AppDelegate.viewReady {

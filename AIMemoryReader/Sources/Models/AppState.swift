@@ -74,6 +74,33 @@ final class AppState {
         }
     }
 
+    /// True for sandboxed (Mac App Store) builds that haven't yet been granted
+    /// access to a host folder. SidebarView shows a "Grant access" empty state in
+    /// this case. Always false for the direct-distribution build.
+    var needsSandboxGrant: Bool {
+        #if os(macOS)
+        return BookmarkStore.isSandboxed
+            && !BookmarkStore.shared.hasAnyGrant
+            && availableSources.isEmpty
+        #else
+        return false
+        #endif
+    }
+
+    /// Trigger the system folder picker, persist a security-scoped bookmark, and
+    /// refresh the detected sources. Called from the sidebar's grant button.
+    @MainActor
+    func grantSandboxAccess() {
+        #if os(macOS)
+        guard BookmarkStore.shared.requestAccess() != nil else { return }
+        // After the grant, re-detect available sources so the sidebar repopulates.
+        availableSources = AISource.detectAllAvailable()
+        if let first = availableSources.first {
+            selectSource(first)
+        }
+        #endif
+    }
+
     /// Cycle between Standard and Eye-Care.
     func toggleAppTheme() {
         appTheme = (appTheme == .standard) ? .eyeCare : .standard
