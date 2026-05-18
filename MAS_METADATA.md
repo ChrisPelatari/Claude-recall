@@ -125,12 +125,70 @@ No login required. No paywall. No in-app purchases.
 Thank you for reviewing.
 ```
 
-## Code changes still needed before submission
+## Code changes — status
 
-- [ ] Replace auto-detection of `~/.claude/`, `~/.codex/` etc. with a first-launch onboarding that asks for folder access via NSOpenPanel and persists security-scoped bookmarks. (Sandbox forbids direct home-directory access without user grant.)
-- [ ] Persist the bookmark data in UserDefaults, restore it on launch.
-- [ ] Add a "Grant access" affordance in the sidebar empty state.
-- [ ] Generate 5 App Store screenshots at 2560×1600.
-- [ ] Write `privacy.html` and publish to the GitHub Pages site.
-- [ ] Cut a fresh build with the sandbox entitlements active and the privacy manifest bundled (verify with `codesign --display --entitlements - /path/to/AI\ Memory\ Reader.app`).
-- [ ] Test that the app runs cleanly inside the sandbox (some FileManager calls may fail silently — exercise every code path).
+- [x] Replace auto-detection with NSOpenPanel + security-scoped bookmarks. **Done** in `BookmarkStore.swift` (commit `a9c6ebc`). The store no-ops in unsandboxed builds, so the GitHub-release ZIP is unaffected.
+- [x] Persist bookmark data in UserDefaults, restore on launch. **Done** — wired into `AppDelegate.applicationWillFinishLaunching`.
+- [x] "Grant access" affordance in sidebar empty state. **Done** — `SidebarView.emptyState` shows the new copy when `appState.needsSandboxGrant` is true.
+- [x] `privacy.html` published. **Done** — at https://nvwalj.github.io/ai-memory-reader/privacy.html.
+- [ ] Generate 5 App Store screenshots at 2560×1600. (Best done by you running the app locally; AppleScript / `screencapture` route is brittle.)
+- [ ] Cut a fresh build with sandbox entitlements active and the privacy manifest bundled. **Blocked by signing** — requires Apple Developer team `LFUDWMQGY3` (Kollo Inc.) and a provisioning profile from Apple's servers, which Xcode fetches via Xcode → Settings → Accounts.
+- [ ] Test the app inside the sandbox end-to-end (exercise grant flow, open a folder, edit a file, watch a save, JSON viewer).
+
+## Archive command (run this from a Mac signed into the Apple Dev account)
+
+Once your Apple Developer team is added in Xcode → Settings → Accounts and a Mac App Distribution / Mac Installer Distribution cert exists in the keychain:
+
+```bash
+cd ~/Project/ai-memory-reader      # adjust path
+xcodegen generate
+
+xcodebuild \
+  -project AIMemoryReader.xcodeproj \
+  -scheme AIMemoryReader \
+  -configuration Release \
+  -destination 'generic/platform=macOS' \
+  -archivePath build/AIMR.xcarchive \
+  ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO \
+  CODE_SIGN_STYLE=Automatic \
+  DEVELOPMENT_TEAM=LFUDWMQGY3 \
+  archive
+
+# Then export as a Mac App Store .pkg:
+cat > /tmp/aimr-exportoptions.plist <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>method</key>           <string>app-store</string>
+    <key>teamID</key>           <string>LFUDWMQGY3</string>
+    <key>uploadSymbols</key>    <true/>
+    <key>uploadBitcode</key>    <false/>
+</dict>
+</plist>
+EOF
+
+xcodebuild \
+  -exportArchive \
+  -archivePath build/AIMR.xcarchive \
+  -exportOptionsPlist /tmp/aimr-exportoptions.plist \
+  -exportPath build/AIMR-export
+
+# Upload to App Store Connect (xcrun altool is being deprecated; use notarytool's sibling Transporter command):
+xcrun altool --upload-app -f build/AIMR-export/*.pkg -t macos \
+  -u <your-apple-id-email> -p '@keychain:AC_PASSWORD'
+
+# Or open Transporter.app from the App Store and drag the .pkg in.
+```
+
+## App Store Connect listing setup (one-time, in browser)
+
+1. Sign in at https://appstoreconnect.apple.com with the same Apple ID tied to the `LFUDWMQGY3` team.
+2. **My Apps → +** → **New App**.
+3. Platform: macOS. Name: `AI Memory Reader`. Primary language: English (US). Bundle ID: `com.aitools.ai-memory-reader` (must match `project.yml`). SKU: `aimr-001` (anything unique). User access: Full access. Click **Create**.
+4. Once created, fill in the listing using the copy in this file (description, keywords, support URL, marketing URL, privacy policy URL).
+5. **App Privacy → Edit** → answer "Data Not Collected." Save.
+6. **Pricing and Availability** → Free (or paid tier 5 / $4.99). Worldwide availability.
+7. Once the binary is uploaded via `xcodebuild -exportArchive` + Transporter, it appears under **TestFlight** within ~30 min. Then promote to **App Store → 1.0.0 (or 0.4.2) → Submit for Review**.
+
+Expected first-review time: 1-3 days. New account on this Team may get extra-careful first review.
