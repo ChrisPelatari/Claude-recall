@@ -1,13 +1,12 @@
 # AI Memory Reader
 
-一款原生 macOS & iOS 应用，用于浏览、阅读和编辑 AI 代理的记忆文件 —— 渲染美观，随时可用。
+一款原生 macOS 浏览器，专门用来看你的 AI 智能体在硬盘上偷偷写下的所有内容：`CLAUDE.md`、`AGENTS.md`、每日 memory 笔记、以及 `~/.claude/projects/*.jsonl` session telemetry。自动发现 8 个 AI 工具的目录（Claude Code、Codex、Cursor、Gemini、Continue、GitHub Copilot、Aider、OpenClaw），实时监听文件变化，分块渲染让 VSCode 卡死的 multi-MB JSONL。
 
 [![Ko-fi](https://img.shields.io/badge/赞助-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/nvwalj)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Platforms](https://img.shields.io/badge/平台-macOS%2015%20%7C%20iOS%2017-lightgrey.svg)]()
 
-> 唯一一款**原生** macOS / iOS 应用，用来浏览你的 AI 代理记忆文件。
-> 专为 **Claude Code**、**OpenClaw**、**Codex**、**Cursor**、**Gemini** 等工具打造。
+> 原生 Swift + SwiftUI，3 MB 通用二进制，零网络请求（除一次/天的 GitHub release 检查，可关）。iPhone 版只读。
 
 ![AI Memory Reader](home.png)
 
