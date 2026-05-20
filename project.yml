@@ -39,10 +39,18 @@ targets:
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_FILE: AIMemoryReader/Sources/Resources/Info.plist
         SWIFT_STRICT_CONCURRENCY: complete
-        # Sandbox entitlements — used for Mac App Store build. The direct-distribution
-        # build (GitHub release ZIP) can override CODE_SIGN_ENTITLEMENTS to "" so it
-        # ships unsandboxed.
-        CODE_SIGN_ENTITLEMENTS: AIMemoryReader.entitlements
+        # Local dev defaults: sign-to-run-locally, no entitlements, no team needed.
+        # Release builds opt in to sandbox + iCloud-KVS entitlements (see below).
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_ENTITLEMENTS: ""
+      configs:
+        Release:
+          # Mac App Store / signed-release build: sandbox + iCloud-KVS active.
+          # Requires an Apple Dev team in Xcode → Settings → Accounts. The direct-
+          # distribution GitHub-release build re-overrides CODE_SIGN_ENTITLEMENTS
+          # to "" via the archive command in MAS_METADATA.md.
+          CODE_SIGN_ENTITLEMENTS: AIMemoryReader.entitlements
     dependencies:
       - package: swift-markdown-ui
         product: MarkdownUI

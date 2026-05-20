@@ -84,11 +84,12 @@ struct MarkdownEditorView: NSViewRepresentable {
 
     // MARK: - Coordinator
 
+    @MainActor
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: MarkdownEditorView
         weak var textView: HighlightingTextView?
         private var isUpdating = false
-        private var findObserver: NSObjectProtocol?
+        private nonisolated(unsafe) var findObserver: NSObjectProtocol?
 
         init(_ parent: MarkdownEditorView) {
             self.parent = parent
@@ -110,7 +111,6 @@ struct MarkdownEditorView: NSViewRepresentable {
             }
         }
 
-        @MainActor
         private func showFindBar() {
             guard let textView else { return }
             let item = NSMenuItem()
