@@ -1,4 +1,4 @@
-# AI Memory Reader
+# Claude Recall
 
 一款原生 macOS 浏览器，专门用来看你的 AI 智能体在硬盘上偷偷写下的所有内容：`CLAUDE.md`、`AGENTS.md`、每日 memory 笔记、以及 `~/.claude/projects/*.jsonl` session telemetry。自动发现 8 个 AI 工具的目录（Claude Code、Codex、Cursor、Gemini、Continue、GitHub Copilot、Aider、OpenClaw），实时监听文件变化，分块渲染让 VSCode 卡死的 multi-MB JSONL。
 
@@ -8,11 +8,11 @@
 
 > 原生 Swift + SwiftUI，3 MB 通用二进制，零网络请求（除一次/天的 GitHub release 检查，可关）。iPhone 版只读。
 
-![AI Memory Reader](home.png)
+![Claude Recall](home.png)
 
 ## ❤️ 支持本项目
 
-AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者你希望看到它继续演进，欢迎到 **[Ko-fi ↗](https://ko-fi.com/nvwalj)** 请作者喝杯咖啡 —— 每一杯都会变成新的功能。
+Claude Recall 是免费开源软件。如果它帮你节省了时间，或者你希望看到它继续演进，欢迎到 **[Ko-fi ↗](https://ko-fi.com/nvwalj)** 请作者喝杯咖啡 —— 每一杯都会变成新的功能。
 
 <a href='https://ko-fi.com/nvwalj' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='在 Ko-fi 上请作者喝咖啡' /></a>
 
@@ -36,8 +36,8 @@ AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者
 - **手动保存** — ⌘S，带 "已保存" 视觉提示
 
 ### AI 工具集成
-- **URL Scheme** — `aimemoryreader://open?path=/path/to/file.md&heading=标题`
-- **命令行** — `aimr open /path/to/file.md --heading "标题"`
+- **URL Scheme** — `clauderecall://open?path=/path/to/file.md&heading=标题`
+- **命令行** — `crec open /path/to/file.md --heading "标题"`
 - 让 AI 代理直接打开并跳转到指定文件和标题
 
 ### 自定义源
@@ -71,13 +71,13 @@ AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者
 
 ### 方案 1 — 下载（最快，不需要 Xcode）
 
-1. 从 [releases 页面](https://github.com/nvwalj/ai-memory-reader/releases/latest)下载最新的 **`AIMemoryReader-vX.Y.Z-universal.zip`** — 通用二进制，Apple Silicon 和 Intel Mac 都能跑。
-2. 解压后把 `AI Memory Reader.app` 拖到 `/Applications`。
+1. 从 [releases 页面](https://github.com/ChrisPelatari/Claude-recall/releases/latest)下载最新的 **`ClaudeRecall-vX.Y.Z-universal.zip`** — 通用二进制，Apple Silicon 和 Intel Mac 都能跑。
+2. 解压后把 `Claude Recall.app` 拖到 `/Applications`。
 3. **首次启动：** macOS 会提示"未识别的开发者"（应用是 ad-hoc 签名，尚未公证）。两种绕过方式：
    - **图形界面：** Finder 里右键 app → **打开** → 弹窗里再点 **打开**。一次通过后双击就能用了。
    - **终端一条命令：**
      ```bash
-     xattr -dr com.apple.quarantine "/Applications/AI Memory Reader.app"
+     xattr -dr com.apple.quarantine "/Applications/Claude Recall.app"
      ```
 
 > 公证后的版本会在配 Developer ID 之后推出。
@@ -85,26 +85,26 @@ AI Memory Reader 是免费开源软件。如果它帮你节省了时间，或者
 ### 方案 2 — 从源码构建
 
 ```bash
-git clone https://github.com/nvwalj/ai-memory-reader.git
-cd ai-memory-reader
+git clone https://github.com/ChrisPelatari/Claude-recall.git
+cd claude-recall
 brew install xcodegen   # 没装的话先装
 xcodegen generate
-open AIMemoryReader.xcodeproj
+open ClaudeRecall.xcodeproj
 # ⌘R 编译运行
 ```
 
 ### 命令行工具（可选）
 
-将 `aimr` 脚本复制到 PATH：
+将 `crec` 脚本复制到 PATH：
 ```bash
-cp aimr /usr/local/bin/
-chmod +x /usr/local/bin/aimr
+cp crec /usr/local/bin/
+chmod +x /usr/local/bin/crec
 ```
 
 使用：
 ```bash
-aimr open ~/.openclaw/workspace/MEMORY.md
-aimr open ~/.openclaw/workspace/MEMORY.md --heading "关于我"
+crec open ~/.openclaw/workspace/MEMORY.md
+crec open ~/.openclaw/workspace/MEMORY.md --heading "关于我"
 ```
 
 ### 系统要求

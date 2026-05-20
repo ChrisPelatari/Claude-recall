@@ -20,7 +20,7 @@ final class FileWatcher: Sendable {
         let pathsToWatch = [watchPath] as CFArray
         print("[FileWatcher] Starting watch on: \(watchPath)")
 
-        let queue = DispatchQueue(label: "com.aitools.filewatcher", qos: .utility)
+        let queue = DispatchQueue(label: "com.pelatari.claude-recall.filewatcher", qos: .utility)
 
         var context = FSEventStreamContext()
 

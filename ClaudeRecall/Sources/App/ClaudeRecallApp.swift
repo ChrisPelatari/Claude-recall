@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 #endif
 
 @main
-struct AIMemoryReaderApp: App {
+struct ClaudeRecallApp: App {
     @State private var appState = AppState()
 
     #if os(macOS)
@@ -148,8 +148,8 @@ struct AIMemoryReaderApp: App {
             }
 
             CommandGroup(replacing: .help) {
-                Button("AI Memory Reader Help") {
-                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader#readme") {
+                Button("Claude Recall Help") {
+                    if let url = URL(string: "https://github.com/ChrisPelatari/Claude-recall#readme") {
                         NSWorkspace.shared.open(url)
                     }
                 }
@@ -160,14 +160,14 @@ struct AIMemoryReaderApp: App {
 
                 Divider()
 
-                Button("Support Development on Ko-fi…") {
+                Button("Support Upstream Author on Ko-fi…") {
                     if let url = URL(string: "https://ko-fi.com/nvwalj") {
                         NSWorkspace.shared.open(url)
                     }
                 }
 
                 Button("Star on GitHub…") {
-                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader") {
+                    if let url = URL(string: "https://github.com/ChrisPelatari/Claude-recall") {
                         NSWorkspace.shared.open(url)
                     }
                 }
@@ -175,7 +175,7 @@ struct AIMemoryReaderApp: App {
                 Divider()
 
                 Button("Report an Issue…") {
-                    if let url = URL(string: "https://github.com/nvwalj/ai-memory-reader/issues/new") {
+                    if let url = URL(string: "https://github.com/ChrisPelatari/Claude-recall/issues/new") {
                         NSWorkspace.shared.open(url)
                     }
                 }

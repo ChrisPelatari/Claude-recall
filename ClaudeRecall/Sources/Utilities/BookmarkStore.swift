@@ -5,7 +5,7 @@ import SwiftUI
 import AppKit
 #endif
 
-/// Persists security-scoped bookmarks so a sandboxed AIMR build can read AI source
+/// Persists security-scoped bookmarks so a sandboxed Claude Recall build can read AI source
 /// folders (~/.claude/, ~/.codex/, project trees, etc.) across launches.
 ///
 /// Bookmarks are device-local (they encode an opaque token issued by macOS bound to
@@ -43,7 +43,7 @@ final class BookmarkStore: @unchecked Sendable {
     @discardableResult
     func requestAccess(
         prompt: String = "Grant access",
-        message: String = "Choose your home folder so AI Memory Reader can read CLAUDE.md, AGENTS.md, and other AI agent memory files inside it. AIMR only reads what's in this folder — it never sends anything off your Mac.",
+        message: String = "Choose your home folder so Claude Recall can read CLAUDE.md, AGENTS.md, and other AI agent memory files inside it. Claude Recall only reads what's in this folder — it never sends anything off your Mac.",
         startAt: URL? = nil
     ) -> URL? {
         #if os(macOS)

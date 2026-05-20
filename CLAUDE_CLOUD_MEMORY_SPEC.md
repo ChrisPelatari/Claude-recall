@@ -1,12 +1,12 @@
-# AIMR Feature: Claude.ai Cloud Memory Sync
+# Claude Recall Feature: Claude.ai Cloud Memory Sync
 
-Spec for surfacing the user's claude.ai cloud memory inside AI Memory Reader, on the same sidebar that already lists their local `CLAUDE.md` files.
+Spec for surfacing the user's claude.ai cloud memory inside Claude Recall, on the same sidebar that already lists their local `CLAUDE.md` files.
 
 ## Why this matters
 
-Today, AIMR shows everything **except** the one place Claude actually persists context about the user across all of their conversations — claude.ai's server-side "Memory" feature. That memory is plain Markdown, ~1-4 KB per user, regenerated nightly, and user-editable. It's the missing piece.
+Today, Claude Recall shows everything **except** the one place Claude actually persists context about the user across all of their conversations — claude.ai's server-side "Memory" feature. That memory is plain Markdown, ~1-4 KB per user, regenerated nightly, and user-editable. It's the missing piece.
 
-Once we ship this, AIMR's positioning sharpens from "viewer for local memory files" → **"single pane of glass for everything Claude remembers about you, local and cloud."**
+Once we ship this, Claude Recall's positioning sharpens from "viewer for local memory files" → **"single pane of glass for everything Claude remembers about you, local and cloud."**
 
 ## Reverse-engineered API (claude.ai web)
 
@@ -73,7 +73,7 @@ Two ways:
 
 Prefer #1 if the endpoint is clean.
 
-## UX in AIMR
+## UX in Claude Recall
 
 ### Sidebar
 
@@ -89,7 +89,7 @@ The cloud group lives next to the existing local groups (Claude Code, Codex, Cur
 If the user has never logged in:
 
 > **Connect your claude.ai account**
-> Pull your account-level memory and project memories into AI Memory Reader. Read-only — AIMR never writes to your claude.ai memory. [Connect…] [Skip]
+> Pull your account-level memory and project memories into Claude Recall. Read-only — Claude Recall never writes to your claude.ai memory. [Connect…] [Skip]
 
 Click → WKWebView modal → user logs in once → modal closes → memories appear in sidebar.
 
@@ -109,12 +109,12 @@ Click → WKWebView modal → user logs in once → modal closes → memories ap
 **v1 (this sprint):**
 - Read-only account memory via WKWebView-captured cookies
 - Sidebar entry, Markdown render
-- "Save snapshot to local file" → writes to `~/.aimr/cloud-memory.md` for offline reference
+- "Save snapshot to local file" → writes to `~/.claude-recall/cloud-memory.md` for offline reference
 - ~1 week of Swift work, mostly in `AppState.swift` / `AISource.swift` / new `CloudMemoryService.swift`
 
 **v2 (later):**
 - Project-level memory tree
-- Write-back: edit in AIMR → PATCH to claude.ai (after reverse-engineering the write endpoint)
+- Write-back: edit in Claude Recall → PATCH to claude.ai (after reverse-engineering the write endpoint)
 - Bidirectional sync local `CLAUDE.md` ↔ claude.ai memory (with conflict prompts)
 
 ## Risks
@@ -125,7 +125,7 @@ Click → WKWebView modal → user logs in once → modal closes → memories ap
 
 ## Marketing angle
 
-This single feature unlocks the AIMR README headline:
+This single feature unlocks the Claude Recall README headline:
 
 > **The only viewer for both your local AND your claude.ai cloud memory.**
 

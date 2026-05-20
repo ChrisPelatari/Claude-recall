@@ -263,7 +263,7 @@ final class AppState {
     // MARK: - URL Scheme
 
     func handleURL(_ url: URL) {
-        guard url.scheme == "aimemoryreader" else { return }
+        guard url.scheme == "clauderecall" else { return }
 
         if url.host == "open" || url.path.isEmpty {
             let components = URLComponents(url: url, resolvingAgainstBaseURL: false)

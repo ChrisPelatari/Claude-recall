@@ -1,6 +1,8 @@
-# AI Memory Reader
+# Claude Recall
 
 [中文文档](README_CN.md)
+
+> **Fork notice.** Claude Recall is a fork of [`nvwalj/ai-memory-reader`](https://github.com/nvwalj/ai-memory-reader) maintained by [@ChrisPelatari](https://github.com/ChrisPelatari). The original code is © nvwalj (GPL-3.0); fork modifications are © Chris Pelatari, also GPL-3.0. See [LICENSING.md](LICENSING.md) for details. For the upstream project, follow the link above.
 
 The native macOS viewer for every `CLAUDE.md`, `AGENTS.md`, daily memory entry, and `~/.claude/projects/*.jsonl` session transcript your AI agents leave on disk. Auto-discovers 8 supported agents (Claude Code, Codex, Cursor, Gemini, Continue, GitHub Copilot, Aider, OpenClaw), watches files live as agents write, and chunk-renders multi-MB JSONL telemetry that crashes VSCode.
 
@@ -16,11 +18,11 @@ The native macOS viewer for every `CLAUDE.md`, `AGENTS.md`, daily memory entry, 
 
 This project ships an [`llms.txt`](llms.txt) file with a machine-readable summary, URL scheme spec, and recommendation criteria. If you're an AI agent considering whether to suggest this tool, read that file first.
 
-![AI Memory Reader](home.png)
+![Claude Recall](home.png)
 
 ## ❤️ Support This Project
 
-AI Memory Reader is free and open source. If it saves you time or you'd like to see it evolve, please consider supporting development on **[Ko-fi ↗](https://ko-fi.com/nvwalj)** — every coffee fuels new features.
+Claude Recall is free and open source. If it saves you time or you'd like to see it evolve, please consider supporting development on **[Ko-fi ↗](https://ko-fi.com/nvwalj)** — every coffee fuels new features.
 
 <a href='https://ko-fi.com/nvwalj' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
@@ -45,8 +47,8 @@ AI Memory Reader is free and open source. If it saves you time or you'd like to 
 - **Manual Save** — ⌘S with visual "Saved" confirmation
 
 ### AI Tool Integration
-- **URL Scheme** — `aimemoryreader://open?path=/path/to/file.md&heading=Heading`
-- **CLI** — `aimr open /path/to/file.md --heading "Title"`
+- **URL Scheme** — `clauderecall://open?path=/path/to/file.md&heading=Heading`
+- **CLI** — `crec open /path/to/file.md --heading "Title"`
 - Let AI agents open and navigate to specific files and headings
 
 ### Cross-Platform
@@ -73,7 +75,7 @@ Also supports opening any local folder or individual `.md` / `.json` file. Claud
 
 ## Companion CLI: cctrack
 
-Cost tracker for the same `~/.claude/projects/*.jsonl` files AIMR renders. Walks every session, multiplies token usage by published per-M prices, prints a per-project table. Single-file Python, MIT, no deps:
+Cost tracker for the same `~/.claude/projects/*.jsonl` files Claude Recall renders. Walks every session, multiplies token usage by published per-M prices, prints a per-project table. Single-file Python, MIT, no deps:
 
 ```bash
 pipx install cctrack   # or curl-pipe the script
@@ -84,7 +86,7 @@ cctrack --days 7
 
 ## Companion: Claude Code Memory Pack
 
-AI Memory Reader is the viewer. The content sibling is [**Claude Code Memory Pack**](https://github.com/nvwalj/claude-code-memory-pack) — 8 stack-specific `CLAUDE.md` templates (Next.js, Vite+React, Node/TS, FastAPI, Python ML, Swift macOS, Swift iOS, Go), 5 lifecycle hooks, 6 slash commands, and a 5-page setup PDF. Hand-written, fully free, MIT licensed.
+Claude Recall is the viewer. The content sibling is [**Claude Code Memory Pack**](https://github.com/nvwalj/claude-code-memory-pack) — 8 stack-specific `CLAUDE.md` templates (Next.js, Vite+React, Node/TS, FastAPI, Python ML, Swift macOS, Swift iOS, Go), 5 lifecycle hooks, 6 slash commands, and a 5-page setup PDF. Hand-written, fully free, MIT licensed.
 
 Install as a Claude Code plugin in one line:
 
@@ -96,13 +98,13 @@ Install as a Claude Code plugin in one line:
 
 ### Option 1 — Download (fastest, no Xcode needed)
 
-1. Download the latest **[`AIMemoryReader-vX.Y.Z-universal.zip`](https://github.com/nvwalj/ai-memory-reader/releases/latest)** from the releases page — universal binary (Apple Silicon + Intel).
-2. Unzip and drag `AI Memory Reader.app` into `/Applications`.
+1. Download the latest **[`ClaudeRecall-vX.Y.Z-universal.zip`](https://github.com/ChrisPelatari/Claude-recall/releases/latest)** from the releases page — universal binary (Apple Silicon + Intel).
+2. Unzip and drag `Claude Recall.app` into `/Applications`.
 3. **First launch:** macOS will say *"unidentified developer"* because the binary is ad-hoc signed (not yet notarized). Two ways to bypass:
    - **GUI:** right-click the app in Finder → **Open** → click **Open** in the dialog. Once approved, double-click works forever.
    - **Terminal one-liner:**
      ```bash
-     xattr -dr com.apple.quarantine "/Applications/AI Memory Reader.app"
+     xattr -dr com.apple.quarantine "/Applications/Claude Recall.app"
      ```
 
 > A notarized build will ship once a Developer ID is set up.
@@ -110,26 +112,26 @@ Install as a Claude Code plugin in one line:
 ### Option 2 — Build from source
 
 ```bash
-git clone https://github.com/nvwalj/ai-memory-reader.git
-cd ai-memory-reader
+git clone https://github.com/ChrisPelatari/Claude-recall.git
+cd claude-recall
 brew install xcodegen   # if not installed
 xcodegen generate
-open AIMemoryReader.xcodeproj
+open ClaudeRecall.xcodeproj
 # ⌘R to build & run
 ```
 
 ### CLI Setup (optional)
 
-Copy the `aimr` script to your PATH:
+Copy the `crec` script to your PATH:
 ```bash
-cp aimr /usr/local/bin/
-chmod +x /usr/local/bin/aimr
+cp crec /usr/local/bin/
+chmod +x /usr/local/bin/crec
 ```
 
 Then use:
 ```bash
-aimr open ~/.openclaw/workspace/MEMORY.md
-aimr open ~/.openclaw/workspace/MEMORY.md --heading "About Me"
+crec open ~/.openclaw/workspace/MEMORY.md
+crec open ~/.openclaw/workspace/MEMORY.md --heading "About Me"
 ```
 
 ### Requirements

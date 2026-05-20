@@ -121,7 +121,7 @@ struct iOSContentView: View {
     var body: some View {
         NavigationStack {
             iOSFileListView()
-                .navigationTitle("AI Memory Reader")
+                .navigationTitle("Claude Recall")
                 .navigationBarTitleDisplayMode(.large)
                 .toolbar {
                     ToolbarItem(placement: .primaryAction) {

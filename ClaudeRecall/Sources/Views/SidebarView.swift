@@ -69,7 +69,7 @@ struct SidebarView: View {
 
     private var headerView: some View {
         HStack(spacing: 6) {
-            Text("AI Memory Reader")
+            Text("Claude Recall")
                 .font(.headline)
                 .foregroundColor(palette.isEyeCare ? palette.text : .primary)
             Spacer()
@@ -294,7 +294,7 @@ struct SidebarView: View {
                 Text("Grant access to your home folder")
                     .font(.title3)
                     .foregroundColor(.primary)
-                Text("AI Memory Reader needs your permission to read CLAUDE.md, AGENTS.md, and other AI agent memory files inside your home folder. AIMR only reads — it never sends anything off your Mac.")
+                Text("Claude Recall needs your permission to read CLAUDE.md, AGENTS.md, and other AI agent memory files inside your home folder. Claude Recall only reads — it never sends anything off your Mac.")
                     .font(.caption)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)

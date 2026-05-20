@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>AI Memory Reader — Native macOS App for Claude Code, OpenClaw, Codex Memory</title>
+<title>Claude Recall — Native macOS App for Claude Code, OpenClaw, Codex Memory</title>
 <meta name="description" content="The native macOS &amp; iOS app for browsing AI agent memory files. Auto-detects Claude Code (~/.claude/CLAUDE.md), OpenClaw, Codex, Cursor, Gemini, Continue, Aider, GitHub Copilot. Free, open source.">
 <meta name="keywords" content="claude code memory, CLAUDE.md viewer, claude code mac app, AI agent memory, claude code GUI, openclaw memory reader, codex memory viewer, cursor memory, gemini memory mac">
-<meta property="og:title" content="AI Memory Reader — Native macOS App for AI Agent Memory">
+<meta property="og:title" content="Claude Recall — Native macOS App for AI Agent Memory">
 <meta property="og:description" content="The native macOS &amp; iOS app for browsing Claude Code, OpenClaw, Codex, Cursor, Gemini memory files. Free &amp; open source.">
-<meta property="og:url" content="https://nvwalj.github.io/ai-memory-reader/">
+<meta property="og:url" content="https://chrispelatari.github.io/Claude-recall/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Memory Reader — Native macOS App for AI Agent Memory">
+<meta name="twitter:title" content="Claude Recall — Native macOS App for AI Agent Memory">
 <meta name="twitter:description" content="Browse your Claude Code, OpenClaw, Codex memory files in a beautiful native Mac &amp; iOS app. Free &amp; open source.">
-<link rel="canonical" href="https://nvwalj.github.io/ai-memory-reader/">
+<link rel="canonical" href="https://chrispelatari.github.io/Claude-recall/">
 <style>
 :root {
   --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --accent: #f78166;
@@ -77,17 +77,17 @@ footer a { color: var(--muted); }
       beautifully rendered, instantly searchable.
     </p>
     <div class="cta">
-      <a class="btn btn-primary" href="https://github.com/nvwalj/ai-memory-reader/releases/latest">
+      <a class="btn btn-primary" href="https://github.com/ChrisPelatari/Claude-recall/releases/latest">
         ⬇ Download for macOS
       </a>
-      <a class="btn btn-secondary" href="https://github.com/nvwalj/ai-memory-reader">
+      <a class="btn btn-secondary" href="https://github.com/ChrisPelatari/Claude-recall">
         ⭐ Star on GitHub
       </a>
       <a class="btn btn-kofi" href="https://ko-fi.com/nvwalj">
         ☕ Support on Ko-fi
       </a>
     </div>
-    <img class="hero-img" src="https://raw.githubusercontent.com/nvwalj/ai-memory-reader/main/home.png" alt="AI Memory Reader screenshot showing the macOS app with sidebar, beautifully rendered CLAUDE.md content, and table of contents">
+    <img class="hero-img" src="https://raw.githubusercontent.com/ChrisPelatari/Claude-recall/main/home.png" alt="Claude Recall screenshot showing the macOS app with sidebar, beautifully rendered CLAUDE.md content, and table of contents">
   </div>
 </header>
 
@@ -131,7 +131,7 @@ footer a { color: var(--muted); }
       </div>
       <div class="card">
         <h3>🔌 Agent integration</h3>
-        <p>URL scheme <code>aimemoryreader://</code> and CLI <code>aimr</code> let agents jump to any heading.</p>
+        <p>URL scheme <code>clauderecall://</code> and CLI <code>crec</code> let agents jump to any heading.</p>
       </div>
       <div class="card">
         <h3>📱 iPhone too</h3>
@@ -146,25 +146,25 @@ footer a { color: var(--muted); }
     <h2>Install in 30 seconds</h2>
     <p>Universal binary (Apple Silicon + Intel). No Xcode required.</p>
     <pre><code># 1. Download
-curl -L -o aimr.zip https://github.com/nvwalj/ai-memory-reader/releases/latest/download/AI-Memory-Reader-0.4.0-universal.zip
-unzip aimr.zip -d /Applications/
+curl -L -o claude-recall.zip https://github.com/ChrisPelatari/Claude-recall/releases/latest/download/ClaudeRecall-0.4.0-universal.zip
+unzip claude-recall.zip -d /Applications/
 
 # 2. Strip Gatekeeper quarantine (or right-click → Open)
-xattr -dr com.apple.quarantine "/Applications/AI Memory Reader.app"
+xattr -dr com.apple.quarantine "/Applications/Claude Recall.app"
 
 # 3. Launch
-open "/Applications/AI Memory Reader.app"</code></pre>
+open "/Applications/Claude Recall.app"</code></pre>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2>Built for the Claude Code workflow</h2>
-    <p>If you spend a lot of time in Claude Code, you know <code>~/.claude/CLAUDE.md</code> and per-project <code>CLAUDE.md</code> files become your "second brain." Opening them in TextEdit feels wrong. AI Memory Reader treats them with the care they deserve:</p>
+    <p>If you spend a lot of time in Claude Code, you know <code>~/.claude/CLAUDE.md</code> and per-project <code>CLAUDE.md</code> files become your "second brain." Opening them in TextEdit feels wrong. Claude Recall treats them with the care they deserve:</p>
     <ul>
       <li><strong>Today panel</strong> — auto-highlights today's <code>memory/YYYY-MM-DD.md</code></li>
       <li><strong>File watching</strong> — reloads when Claude writes to memory</li>
-      <li><strong>URL scheme</strong> — agents can jump to a specific heading: <code>aimemoryreader://open?path=...&amp;heading=...</code></li>
+      <li><strong>URL scheme</strong> — agents can jump to a specific heading: <code>clauderecall://open?path=...&amp;heading=...</code></li>
       <li><strong>JSON support</strong> — inspect AI tool config files</li>
     </ul>
   </div>
@@ -181,16 +181,16 @@ open "/Applications/AI Memory Reader.app"</code></pre>
       <dd>Yes, universal binary covers both Apple Silicon and Intel.</dd>
 
       <dt>Why does macOS say "unidentified developer"?</dt>
-      <dd>The build is ad-hoc signed (notarization requires an Apple Developer membership). Either right-click → Open, or run <code>xattr -dr com.apple.quarantine "/Applications/AI Memory Reader.app"</code> once.</dd>
+      <dd>The build is ad-hoc signed (notarization requires an Apple Developer membership). Either right-click → Open, or run <code>xattr -dr com.apple.quarantine "/Applications/Claude Recall.app"</code> once.</dd>
 
       <dt>How does it differ from claude-mem / memsearch?</dt>
-      <dd>Those are CLI/web dashboards focused on capturing memory. AI Memory Reader is purely a native app for <em>browsing</em> and lightly <em>editing</em> the memory files those tools (or Claude Code itself) create.</dd>
+      <dd>Those are CLI/web dashboards focused on capturing memory. Claude Recall is purely a native app for <em>browsing</em> and lightly <em>editing</em> the memory files those tools (or Claude Code itself) create.</dd>
 
       <dt>iPhone version — what's the use case?</dt>
-      <dd>Open the Files app on iPhone, tap any <code>CLAUDE.md</code> shared via iCloud Drive — AI Memory Reader renders it. Useful for reviewing your project notes on the go.</dd>
+      <dd>Open the Files app on iPhone, tap any <code>CLAUDE.md</code> shared via iCloud Drive — Claude Recall renders it. Useful for reviewing your project notes on the go.</dd>
 
       <dt>How do I contribute / report bugs?</dt>
-      <dd><a href="https://github.com/nvwalj/ai-memory-reader/issues">Open an issue on GitHub</a>. PRs welcome.</dd>
+      <dd><a href="https://github.com/ChrisPelatari/Claude-recall/issues">Open an issue on GitHub</a>. PRs welcome.</dd>
     </dl>
   </div>
 </section>
@@ -199,7 +199,7 @@ open "/Applications/AI Memory Reader.app"</code></pre>
   <div class="container">
     <h2>🧰 Companion: Claude Code Memory Pack</h2>
     <p style="color: var(--muted); max-width: 640px; margin: 0 0 28px;">
-      AI Memory Reader is the viewer. The Pack is the content: 8 stack-specific <code>CLAUDE.md</code> templates,
+      Claude Recall is the viewer. The Pack is the content: 8 stack-specific <code>CLAUDE.md</code> templates,
       5 lifecycle hooks, 6 slash commands, and a 5-page setup PDF on how Claude Code's layered memory loading
       actually works. Fully free, MIT licensed.
     </p>
@@ -221,7 +221,7 @@ open "/Applications/AI Memory Reader.app"</code></pre>
 <section class="support">
   <div class="container">
     <h2>❤️ Support development</h2>
-    <p>AI Memory Reader is free and open source. If it saves you time, every coffee directly funds new features — Claude Desktop support, cloud sync, custom themes, and notarization are next on the roadmap.</p>
+    <p>Claude Recall is free and open source. If it saves you time, every coffee directly funds new features — Claude Desktop support, cloud sync, custom themes, and notarization are next on the roadmap.</p>
     <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
       <a class="btn btn-kofi" href="https://ko-fi.com/nvwalj/?donatebutton=1" style="padding: 14px 24px; font-size: 16px;">
         ☕ $3 — Coffee
@@ -246,9 +246,9 @@ open "/Applications/AI Memory Reader.app"</code></pre>
 <footer>
   <div class="container">
     <p>
-      <a href="https://github.com/nvwalj/ai-memory-reader">GitHub</a> ·
-      <a href="https://github.com/nvwalj/ai-memory-reader/releases">Releases</a> ·
-      <a href="https://github.com/nvwalj/ai-memory-reader/issues">Issues</a> ·
+      <a href="https://github.com/ChrisPelatari/Claude-recall">GitHub</a> ·
+      <a href="https://github.com/ChrisPelatari/Claude-recall/releases">Releases</a> ·
+      <a href="https://github.com/ChrisPelatari/Claude-recall/issues">Issues</a> ·
       <a href="claude-code-memory-guide.html">Memory Guide</a> ·
       <a href="https://ko-fi.com/nvwalj">Ko-fi</a>
     </p>

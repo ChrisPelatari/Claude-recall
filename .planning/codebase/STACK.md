@@ -8,14 +8,14 @@
 - Swift 6.0 - All application code (`SWIFT_VERSION: "6.0"` in `project.yml`)
 
 **Secondary:**
-- Bash - CLI launcher (`aimr` shell script at repo root)
-- Python 3 - Invoked from `aimr` only for `urllib.parse.quote` URL encoding
+- Bash - CLI launcher (`crec` shell script at repo root)
+- Python 3 - Invoked from `crec` only for `urllib.parse.quote` URL encoding
 
 ## Runtime
 
 **Environment:**
-- macOS 15.0+ (Sequoia) for the primary `AIMemoryReader` target
-- iOS 17.0+ for the `AIMemoryReader-iOS` target
+- macOS 15.0+ (Sequoia) for the primary `ClaudeRecall` target
+- iOS 17.0+ for the `ClaudeRecall-iOS` target
 - Both built against Xcode 16.0
 
 **Concurrency Mode:**
@@ -25,13 +25,13 @@
 
 **Project Generation:**
 - **XcodeGen** ≥ 2.40 (`minimumXcodeGenVersion: "2.40"` in `project.yml`)
-- The single source of truth is `project.yml`. `AIMemoryReader.xcodeproj` is regenerated via `xcodegen generate` after any `project.yml` edit; do not hand-edit the `.xcodeproj`.
+- The single source of truth is `project.yml`. `ClaudeRecall.xcodeproj` is regenerated via `xcodegen generate` after any `project.yml` edit; do not hand-edit the `.xcodeproj`.
 
 **Build System:**
 - `xcodebuild` for both targets (commands in `CLAUDE.md` and `MAS_METADATA.md`)
 - Two schemes share one source tree:
-  - `AIMemoryReader` → macOS app
-  - `AIMemoryReader-iOS` → iOS app
+  - `ClaudeRecall` → macOS app
+  - `ClaudeRecall-iOS` → iOS app
 - No test target exists.
 
 **Package Manager:**
@@ -74,15 +74,15 @@ Both packages are bound to both targets.
 
 **Project configuration:**
 - `project.yml` - XcodeGen spec (targets, deployment targets, SPM deps, build settings, entitlement assignment)
-- `AIMemoryReader.entitlements` - macOS sandbox + user-selected R/W + iCloud KVS (active for Mac App Store build)
-- `AIMemoryReader-iOS.entitlements` - iOS iCloud KVS only
-- `AIMemoryReader/Sources/Resources/Info.plist` - URL scheme registration (`aimemoryreader://`), markdown document type, document browser support
-- `AIMemoryReader/Sources/Resources/PrivacyInfo.xcprivacy` - App Privacy manifest declaring FileTimestamp + UserDefaults API usage and no tracking
-- Bundle identifiers: `com.aitools.ai-memory-reader` (macOS), `com.aitools.ai-memory-reader-ios` (iOS)
+- `ClaudeRecall.entitlements` - macOS sandbox + user-selected R/W + iCloud KVS (active for Mac App Store build)
+- `ClaudeRecall-iOS.entitlements` - iOS iCloud KVS only
+- `ClaudeRecall/Sources/Resources/Info.plist` - URL scheme registration (`clauderecall://`), markdown document type, document browser support
+- `ClaudeRecall/Sources/Resources/PrivacyInfo.xcprivacy` - App Privacy manifest declaring FileTimestamp + UserDefaults API usage and no tracking
+- Bundle identifiers: `com.pelatari.claude-recall` (macOS), `com.pelatari.claude-recall-ios` (iOS)
 - Marketing version: `0.4.2`; build numbers `4` (macOS), `3` (iOS)
 
 **Distribution-channel switch:**
-- The Mac App Store build uses `CODE_SIGN_ENTITLEMENTS: AIMemoryReader.entitlements` (sandboxed).
+- The Mac App Store build uses `CODE_SIGN_ENTITLEMENTS: ClaudeRecall.entitlements` (sandboxed).
 - The GitHub-release ZIP build overrides `CODE_SIGN_ENTITLEMENTS` to `""` so the same source ships unsandboxed and ad-hoc signed (comment at `project.yml` lines 42–44).
 
 **Runtime sandbox detection:**

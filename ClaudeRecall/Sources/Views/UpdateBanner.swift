@@ -22,7 +22,7 @@ struct UpdateBanner: View {
                 .padding(.top, 1)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text("AI Memory Reader \(version) is available")
+                Text("Claude Recall \(version) is available")
                     .font(.headline)
                 Text("You're on \(currentVersion). Open the release page to grab the new build.")
                     .font(.caption)

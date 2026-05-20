@@ -1,0 +1,690 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		032E53CBF4AB3F8D1E708BB2 /* FindableReadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D3DE08AB2BEEB25459FC /* FindableReadableView.swift */; };
+		0DA2F0969E99D36E48C193D4 /* FileFindBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760ACF279A13ADC8116D7A5E /* FileFindBar.swift */; };
+		11FE78AA2B703D3264EC3E35 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E969B24B00EC6C58BC410B /* SettingsStore.swift */; };
+		1412D32B6A31B5BF1AE15F0F /* ReadableMarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED34CE33E5BB738161848C8 /* ReadableMarkdownRenderer.swift */; };
+		14A18C485435383017525027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67084A7AECE2E359E7EBBCC /* ContentView.swift */; };
+		17B7290ECE47C86B667FF442 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF727C62884A985F93428E /* AppState.swift */; };
+		1EB9F06AC61B1976C5240739 /* ReadableMarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED34CE33E5BB738161848C8 /* ReadableMarkdownRenderer.swift */; };
+		20BCEBDDECAAEA3355E0FCE2 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0FCDE9DBB7144170E5525 /* SearchService.swift */; };
+		217D53D871FAFB064DE6A631 /* MemoryReaderTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE80DC9A91A28150ABF863D /* MemoryReaderTheme.swift */; };
+		21B9F7AC696417E6C9A71D2A /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD3D95B7FC36D26B46B2E8 /* BookmarkStore.swift */; };
+		21FD672B759F2769942B25C2 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD07760E4A473A0FE169E647 /* PDFExporter.swift */; };
+		222FCBB401E1B64DF70408B3 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42F2278AF3E7DA8A1B92B2 /* AppTheme.swift */; };
+		23CDFF3FED850CAD44CB44FA /* FileTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B00914B7D18A71047820E /* FileTreeBuilder.swift */; };
+		2402F8DCC3D21AD689269443 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67084A7AECE2E359E7EBBCC /* ContentView.swift */; };
+		29A41E45E77A413E8193A82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE792C19DBBF08ABC559E747 /* Assets.xcassets */; };
+		2AF80D2011D3AFD6EC7FF5BF /* FindableReadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B4D3DE08AB2BEEB25459FC /* FindableReadableView.swift */; };
+		30782C6310E6B8A4738F9A03 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4FD8A8FC557F219847A72DB7 /* MarkdownUI */; };
+		35787503CF3AB3711C65661D /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1AADD311A7E4FC8B6B296 /* UpdateChecker.swift */; };
+		3C478146069199AAEED4B546 /* FileWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B3067E4A7E3D301637719 /* FileWatcher.swift */; };
+		43BB3BFAA23179EC91FE373A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE792C19DBBF08ABC559E747 /* Assets.xcassets */; };
+		44CBFB8FD02BD7C7E1885ABB /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2B965E495C835F8844E7A /* FileNode.swift */; };
+		45DBB1E29E11347D195E9FDD /* AISource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5CDC74671AF392FD6A582 /* AISource.swift */; };
+		4BF25087B006D7D3E37A2687 /* LocalImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93415786E2E570518262B25B /* LocalImageProvider.swift */; };
+		4CF72C1375B36865C48CC293 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C42F2278AF3E7DA8A1B92B2 /* AppTheme.swift */; };
+		4D17CF631EFFC3CB8604F6A1 /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = 57A84C36A75CD13DD1EB3FEF /* Splash */; };
+		5271F49723E4E118EA9C5AFD /* MarkdownEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B657D5689F1D04FF5D2DEDE /* MarkdownEditorView.swift */; };
+		553D8291412DA690CBF35C45 /* FileFindBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760ACF279A13ADC8116D7A5E /* FileFindBar.swift */; };
+		670F1A2F8B5956EA2D9A7D22 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E969B24B00EC6C58BC410B /* SettingsStore.swift */; };
+		68595B8C029B364D30321338 /* WindowChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5641F2ECE9D01325AD07CAE /* WindowChrome.swift */; };
+		6C74F50931817DE74AE55351 /* FileNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2B965E495C835F8844E7A /* FileNode.swift */; };
+		768B5F54C7CA33E837AF6B1A /* WindowChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5641F2ECE9D01325AD07CAE /* WindowChrome.swift */; };
+		7D4FCD887666A3197185E934 /* MemoryReaderTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE80DC9A91A28150ABF863D /* MemoryReaderTheme.swift */; };
+		869E021AFD7756A8B4B121A6 /* FileTreeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4B00914B7D18A71047820E /* FileTreeBuilder.swift */; };
+		86E2757DA94325B899B87865 /* UpdateBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A9D55ED084497D409E0E /* UpdateBanner.swift */; };
+		890367DFC527394897E1F6AE /* BookmarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0AD3D95B7FC36D26B46B2E8 /* BookmarkStore.swift */; };
+		A82C4EDC10D2B6F32F0045A2 /* ClaudeRecallApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890C9C31708CBB2FC130213 /* ClaudeRecallApp.swift */; };
+		ACA6967E680D8474B21B1F3F /* Splash in Frameworks */ = {isa = PBXBuildFile; productRef = DE14D7DAFFFB09C1E5F79934 /* Splash */; };
+		B1CEE149EA537AEE16DEDD3A /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F0FCDE9DBB7144170E5525 /* SearchService.swift */; };
+		B51F490D4922EA404CBD513C /* LocalImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93415786E2E570518262B25B /* LocalImageProvider.swift */; };
+		BE6F4AEAC2DF791FCE0FB021 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC61368C216F507841B5DD /* PrivacyInfo.xcprivacy */; };
+		C1827875973C7B7159D7B05E /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1AADD311A7E4FC8B6B296 /* UpdateChecker.swift */; };
+		CA56FAFD8B9CBB0D1D7D3A44 /* MarkdownEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B657D5689F1D04FF5D2DEDE /* MarkdownEditorView.swift */; };
+		CA74741A4FB403998ED7AA6C /* TOCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0A700D211EA6C6575525C /* TOCView.swift */; };
+		CCB047A43F4CFF3F73B14FF7 /* ClaudeRecallApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0890C9C31708CBB2FC130213 /* ClaudeRecallApp.swift */; };
+		D1EEF464D36FAB5CE8045B10 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2CEFC42E790BDCB707046 /* DetailView.swift */; };
+		D2314B7772ACB67964BC66CE /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF727C62884A985F93428E /* AppState.swift */; };
+		D3AEDDBCCFB4359DF7A318E4 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30EAD30E0D5E437D3619C4 /* SidebarView.swift */; };
+		DA4871BFFC958E2A7BFD42C4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC2CEFC42E790BDCB707046 /* DetailView.swift */; };
+		DAACE9B6A1A32FCA281BAE00 /* FileWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B3067E4A7E3D301637719 /* FileWatcher.swift */; };
+		DBE1227E2F493FA3962FB074 /* UpdateBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464A9D55ED084497D409E0E /* UpdateBanner.swift */; };
+		E0F55B6978222DFAC9AF7513 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30EAD30E0D5E437D3619C4 /* SidebarView.swift */; };
+		E5A5BE64E93627479AB74465 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5CDD8FE325C5C17E0526BED5 /* MarkdownUI */; };
+		ECC1E099A37732FF968C4167 /* PDFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD07760E4A473A0FE169E647 /* PDFExporter.swift */; };
+		EE29706B95B76083115F64D5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 9FBC61368C216F507841B5DD /* PrivacyInfo.xcprivacy */; };
+		F287FA316700729507A2949D /* SplashCodeSyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8C8E6283B179AE0106459 /* SplashCodeSyntaxHighlighter.swift */; };
+		F56C4BBECA0331DBC644A850 /* TOCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E0A700D211EA6C6575525C /* TOCView.swift */; };
+		F5773C97DAC99B17FA17A616 /* SplashCodeSyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8C8E6283B179AE0106459 /* SplashCodeSyntaxHighlighter.swift */; };
+		F8A5D00BD3A3F529143C5F7E /* AISource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB5CDC74671AF392FD6A582 /* AISource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0464A9D55ED084497D409E0E /* UpdateBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBanner.swift; sourceTree = "<group>"; };
+		0890C9C31708CBB2FC130213 /* ClaudeRecallApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeRecallApp.swift; sourceTree = "<group>"; };
+		0F8E00426F0D087C2A6C0F28 /* ClaudeRecall-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "ClaudeRecall-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1619F2EEDB2D0E9D61456C06 /* ClaudeRecall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClaudeRecall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1ED34CE33E5BB738161848C8 /* ReadableMarkdownRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadableMarkdownRenderer.swift; sourceTree = "<group>"; };
+		1FC2CEFC42E790BDCB707046 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3B657D5689F1D04FF5D2DEDE /* MarkdownEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownEditorView.swift; sourceTree = "<group>"; };
+		482B3067E4A7E3D301637719 /* FileWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWatcher.swift; sourceTree = "<group>"; };
+		48FF727C62884A985F93428E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		4C42F2278AF3E7DA8A1B92B2 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		4FE80DC9A91A28150ABF863D /* MemoryReaderTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryReaderTheme.swift; sourceTree = "<group>"; };
+		59B4D3DE08AB2BEEB25459FC /* FindableReadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindableReadableView.swift; sourceTree = "<group>"; };
+		5BDA019D751E074AB7C0380F /* ClaudeRecall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClaudeRecall.entitlements; sourceTree = "<group>"; };
+		760ACF279A13ADC8116D7A5E /* FileFindBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileFindBar.swift; sourceTree = "<group>"; };
+		78D267780C10FEA47E963D41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		93415786E2E570518262B25B /* LocalImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalImageProvider.swift; sourceTree = "<group>"; };
+		96E1AADD311A7E4FC8B6B296 /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
+		9D4B00914B7D18A71047820E /* FileTreeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTreeBuilder.swift; sourceTree = "<group>"; };
+		9EB5CDC74671AF392FD6A582 /* AISource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AISource.swift; sourceTree = "<group>"; };
+		9FBC61368C216F507841B5DD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AAF2B965E495C835F8844E7A /* FileNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNode.swift; sourceTree = "<group>"; };
+		B2E969B24B00EC6C58BC410B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		B5641F2ECE9D01325AD07CAE /* WindowChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowChrome.swift; sourceTree = "<group>"; };
+		C3F8C8E6283B179AE0106459 /* SplashCodeSyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCodeSyntaxHighlighter.swift; sourceTree = "<group>"; };
+		D67084A7AECE2E359E7EBBCC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6E0A700D211EA6C6575525C /* TOCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOCView.swift; sourceTree = "<group>"; };
+		DD07760E4A473A0FE169E647 /* PDFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFExporter.swift; sourceTree = "<group>"; };
+		DE792C19DBBF08ABC559E747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EB30EAD30E0D5E437D3619C4 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		F0AD3D95B7FC36D26B46B2E8 /* BookmarkStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkStore.swift; sourceTree = "<group>"; };
+		F9F0FCDE9DBB7144170E5525 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		FE9FB034426F24E4A9DFFF75 /* ClaudeRecall-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ClaudeRecall-iOS.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F83EB0CFCFD9732713620A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30782C6310E6B8A4738F9A03 /* MarkdownUI in Frameworks */,
+				ACA6967E680D8474B21B1F3F /* Splash in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFADFED74EED0F4B5C426602 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5A5BE64E93627479AB74465 /* MarkdownUI in Frameworks */,
+				4D17CF631EFFC3CB8604F6A1 /* Splash in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		29E117EA4079ED71B8D2286A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9499E27F70B544B8AB50A383 /* App */,
+				7BA40F2AABE876E63C52FAAF /* Models */,
+				AB78E08775CB07535063CABA /* Resources */,
+				7EA96D9281FAEC4F48CBE5D0 /* Utilities */,
+				9BE309BC16D8A6793DA7D936 /* Views */,
+			);
+			name = Sources;
+			path = ClaudeRecall/Sources;
+			sourceTree = "<group>";
+		};
+		33B63D8CF9E6D1B45756CD09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F8E00426F0D087C2A6C0F28 /* ClaudeRecall-iOS.app */,
+				1619F2EEDB2D0E9D61456C06 /* ClaudeRecall.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BA40F2AABE876E63C52FAAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9EB5CDC74671AF392FD6A582 /* AISource.swift */,
+				48FF727C62884A985F93428E /* AppState.swift */,
+				4C42F2278AF3E7DA8A1B92B2 /* AppTheme.swift */,
+				AAF2B965E495C835F8844E7A /* FileNode.swift */,
+				B2E969B24B00EC6C58BC410B /* SettingsStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7EA96D9281FAEC4F48CBE5D0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0AD3D95B7FC36D26B46B2E8 /* BookmarkStore.swift */,
+				9D4B00914B7D18A71047820E /* FileTreeBuilder.swift */,
+				482B3067E4A7E3D301637719 /* FileWatcher.swift */,
+				93415786E2E570518262B25B /* LocalImageProvider.swift */,
+				4FE80DC9A91A28150ABF863D /* MemoryReaderTheme.swift */,
+				DD07760E4A473A0FE169E647 /* PDFExporter.swift */,
+				1ED34CE33E5BB738161848C8 /* ReadableMarkdownRenderer.swift */,
+				F9F0FCDE9DBB7144170E5525 /* SearchService.swift */,
+				C3F8C8E6283B179AE0106459 /* SplashCodeSyntaxHighlighter.swift */,
+				96E1AADD311A7E4FC8B6B296 /* UpdateChecker.swift */,
+				B5641F2ECE9D01325AD07CAE /* WindowChrome.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9499E27F70B544B8AB50A383 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0890C9C31708CBB2FC130213 /* ClaudeRecallApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9BE309BC16D8A6793DA7D936 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D67084A7AECE2E359E7EBBCC /* ContentView.swift */,
+				1FC2CEFC42E790BDCB707046 /* DetailView.swift */,
+				760ACF279A13ADC8116D7A5E /* FileFindBar.swift */,
+				59B4D3DE08AB2BEEB25459FC /* FindableReadableView.swift */,
+				3B657D5689F1D04FF5D2DEDE /* MarkdownEditorView.swift */,
+				EB30EAD30E0D5E437D3619C4 /* SidebarView.swift */,
+				D6E0A700D211EA6C6575525C /* TOCView.swift */,
+				0464A9D55ED084497D409E0E /* UpdateBanner.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AB78E08775CB07535063CABA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE792C19DBBF08ABC559E747 /* Assets.xcassets */,
+				FE9FB034426F24E4A9DFFF75 /* ClaudeRecall-iOS.entitlements */,
+				5BDA019D751E074AB7C0380F /* ClaudeRecall.entitlements */,
+				78D267780C10FEA47E963D41 /* Info.plist */,
+				9FBC61368C216F507841B5DD /* PrivacyInfo.xcprivacy */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1E1A59929F4CDEDAFFB9C66 = {
+			isa = PBXGroup;
+			children = (
+				29E117EA4079ED71B8D2286A /* Sources */,
+				33B63D8CF9E6D1B45756CD09 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FE1B3650681F52D791F36B9 /* ClaudeRecall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C861D0C3CD214F32C0EA9539 /* Build configuration list for PBXNativeTarget "ClaudeRecall" */;
+			buildPhases = (
+				340014F3F48713EB5F388C45 /* Sources */,
+				294D1AAAAB0E44E76A8C1FFC /* Resources */,
+				CFADFED74EED0F4B5C426602 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ClaudeRecall;
+			packageProductDependencies = (
+				5CDD8FE325C5C17E0526BED5 /* MarkdownUI */,
+				57A84C36A75CD13DD1EB3FEF /* Splash */,
+			);
+			productName = ClaudeRecall;
+			productReference = 1619F2EEDB2D0E9D61456C06 /* ClaudeRecall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB772435BD908D90081B6943 /* ClaudeRecall-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C61EFCF128E7D331EA17E098 /* Build configuration list for PBXNativeTarget "ClaudeRecall-iOS" */;
+			buildPhases = (
+				0A571C4EAB160FA244401BB7 /* Sources */,
+				C8F68DE89F78F9FDC36CB6CD /* Resources */,
+				7F83EB0CFCFD9732713620A2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ClaudeRecall-iOS";
+			packageProductDependencies = (
+				4FD8A8FC557F219847A72DB7 /* MarkdownUI */,
+				DE14D7DAFFFB09C1E5F79934 /* Splash */,
+			);
+			productName = "ClaudeRecall-iOS";
+			productReference = 0F8E00426F0D087C2A6C0F28 /* ClaudeRecall-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D74D9DDD69AF46A3ECA2C58D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					0FE1B3650681F52D791F36B9 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3A987907DD713ADA965714EB /* Build configuration list for PBXProject "ClaudeRecall" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F1E1A59929F4CDEDAFFB9C66;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1AA8990B216F5EE53DB4D4CF /* XCRemoteSwiftPackageReference "Splash" */,
+				342654D8B3C8E9749C71AD93 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 33B63D8CF9E6D1B45756CD09 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FE1B3650681F52D791F36B9 /* ClaudeRecall */,
+				DB772435BD908D90081B6943 /* ClaudeRecall-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		294D1AAAAB0E44E76A8C1FFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29A41E45E77A413E8193A82A /* Assets.xcassets in Resources */,
+				EE29706B95B76083115F64D5 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8F68DE89F78F9FDC36CB6CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43BB3BFAA23179EC91FE373A /* Assets.xcassets in Resources */,
+				BE6F4AEAC2DF791FCE0FB021 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A571C4EAB160FA244401BB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8A5D00BD3A3F529143C5F7E /* AISource.swift in Sources */,
+				D2314B7772ACB67964BC66CE /* AppState.swift in Sources */,
+				222FCBB401E1B64DF70408B3 /* AppTheme.swift in Sources */,
+				890367DFC527394897E1F6AE /* BookmarkStore.swift in Sources */,
+				CCB047A43F4CFF3F73B14FF7 /* ClaudeRecallApp.swift in Sources */,
+				14A18C485435383017525027 /* ContentView.swift in Sources */,
+				DA4871BFFC958E2A7BFD42C4 /* DetailView.swift in Sources */,
+				553D8291412DA690CBF35C45 /* FileFindBar.swift in Sources */,
+				44CBFB8FD02BD7C7E1885ABB /* FileNode.swift in Sources */,
+				23CDFF3FED850CAD44CB44FA /* FileTreeBuilder.swift in Sources */,
+				DAACE9B6A1A32FCA281BAE00 /* FileWatcher.swift in Sources */,
+				032E53CBF4AB3F8D1E708BB2 /* FindableReadableView.swift in Sources */,
+				4BF25087B006D7D3E37A2687 /* LocalImageProvider.swift in Sources */,
+				5271F49723E4E118EA9C5AFD /* MarkdownEditorView.swift in Sources */,
+				217D53D871FAFB064DE6A631 /* MemoryReaderTheme.swift in Sources */,
+				21FD672B759F2769942B25C2 /* PDFExporter.swift in Sources */,
+				1EB9F06AC61B1976C5240739 /* ReadableMarkdownRenderer.swift in Sources */,
+				20BCEBDDECAAEA3355E0FCE2 /* SearchService.swift in Sources */,
+				11FE78AA2B703D3264EC3E35 /* SettingsStore.swift in Sources */,
+				D3AEDDBCCFB4359DF7A318E4 /* SidebarView.swift in Sources */,
+				F287FA316700729507A2949D /* SplashCodeSyntaxHighlighter.swift in Sources */,
+				CA74741A4FB403998ED7AA6C /* TOCView.swift in Sources */,
+				86E2757DA94325B899B87865 /* UpdateBanner.swift in Sources */,
+				35787503CF3AB3711C65661D /* UpdateChecker.swift in Sources */,
+				768B5F54C7CA33E837AF6B1A /* WindowChrome.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		340014F3F48713EB5F388C45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45DBB1E29E11347D195E9FDD /* AISource.swift in Sources */,
+				17B7290ECE47C86B667FF442 /* AppState.swift in Sources */,
+				4CF72C1375B36865C48CC293 /* AppTheme.swift in Sources */,
+				21B9F7AC696417E6C9A71D2A /* BookmarkStore.swift in Sources */,
+				A82C4EDC10D2B6F32F0045A2 /* ClaudeRecallApp.swift in Sources */,
+				2402F8DCC3D21AD689269443 /* ContentView.swift in Sources */,
+				D1EEF464D36FAB5CE8045B10 /* DetailView.swift in Sources */,
+				0DA2F0969E99D36E48C193D4 /* FileFindBar.swift in Sources */,
+				6C74F50931817DE74AE55351 /* FileNode.swift in Sources */,
+				869E021AFD7756A8B4B121A6 /* FileTreeBuilder.swift in Sources */,
+				3C478146069199AAEED4B546 /* FileWatcher.swift in Sources */,
+				2AF80D2011D3AFD6EC7FF5BF /* FindableReadableView.swift in Sources */,
+				B51F490D4922EA404CBD513C /* LocalImageProvider.swift in Sources */,
+				CA56FAFD8B9CBB0D1D7D3A44 /* MarkdownEditorView.swift in Sources */,
+				7D4FCD887666A3197185E934 /* MemoryReaderTheme.swift in Sources */,
+				ECC1E099A37732FF968C4167 /* PDFExporter.swift in Sources */,
+				1412D32B6A31B5BF1AE15F0F /* ReadableMarkdownRenderer.swift in Sources */,
+				B1CEE149EA537AEE16DEDD3A /* SearchService.swift in Sources */,
+				670F1A2F8B5956EA2D9A7D22 /* SettingsStore.swift in Sources */,
+				E0F55B6978222DFAC9AF7513 /* SidebarView.swift in Sources */,
+				F5773C97DAC99B17FA17A616 /* SplashCodeSyntaxHighlighter.swift in Sources */,
+				F56C4BBECA0331DBC644A850 /* TOCView.swift in Sources */,
+				DBE1227E2F493FA3962FB074 /* UpdateBanner.swift in Sources */,
+				C1827875973C7B7159D7B05E /* UpdateChecker.swift in Sources */,
+				68595B8C029B364D30321338 /* WindowChrome.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		04D80975F70799B388F0937D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClaudeRecall/Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Claude Recall";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pelatari.claude-recall-ios";
+				PRODUCT_NAME = "Claude Recall";
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		353C72D51346D0D6C7B1FB56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		6E898A955CFA3C9034609259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClaudeRecall.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClaudeRecall/Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Claude Recall";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pelatari.claude-recall";
+				PRODUCT_NAME = "Claude Recall";
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Release;
+		};
+		7C17AE6A57F2899B7816CC09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClaudeRecall/Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Claude Recall";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pelatari.claude-recall";
+				PRODUCT_NAME = "Claude Recall";
+				SDKROOT = macosx;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		DAABDA359F364E2D4AC7A7D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		DDD91DB9F8E4046CE0AED377 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ClaudeRecall/Sources/Resources/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Claude Recall";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.4.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pelatari.claude-recall-ios";
+				PRODUCT_NAME = "Claude Recall";
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A987907DD713ADA965714EB /* Build configuration list for PBXProject "ClaudeRecall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAABDA359F364E2D4AC7A7D8 /* Debug */,
+				353C72D51346D0D6C7B1FB56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C61EFCF128E7D331EA17E098 /* Build configuration list for PBXNativeTarget "ClaudeRecall-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D80975F70799B388F0937D /* Debug */,
+				DDD91DB9F8E4046CE0AED377 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C861D0C3CD214F32C0EA9539 /* Build configuration list for PBXNativeTarget "ClaudeRecall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C17AE6A57F2899B7816CC09 /* Debug */,
+				6E898A955CFA3C9034609259 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1AA8990B216F5EE53DB4D4CF /* XCRemoteSwiftPackageReference "Splash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Splash";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.16.0;
+			};
+		};
+		342654D8B3C8E9749C71AD93 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4FD8A8FC557F219847A72DB7 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 342654D8B3C8E9749C71AD93 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		57A84C36A75CD13DD1EB3FEF /* Splash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AA8990B216F5EE53DB4D4CF /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = Splash;
+		};
+		5CDD8FE325C5C17E0526BED5 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 342654D8B3C8E9749C71AD93 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
+		DE14D7DAFFFB09C1E5F79934 /* Splash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1AA8990B216F5EE53DB4D4CF /* XCRemoteSwiftPackageReference "Splash" */;
+			productName = Splash;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D74D9DDD69AF46A3ECA2C58D /* Project object */;
+}

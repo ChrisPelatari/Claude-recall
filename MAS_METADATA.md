@@ -1,12 +1,12 @@
-# Mac App Store metadata for AI Memory Reader
+# Mac App Store metadata for Claude Recall
 
 Drop-in copy for App Store Connect when the time comes to submit.
 
 ## Basics
 
-- **App name:** AI Memory Reader
+- **App name:** Claude Recall
 - **Subtitle (max 30 chars):** Native viewer for CLAUDE.md
-- **Bundle ID:** `com.aitools.ai-memory-reader`
+- **Bundle ID:** `com.pelatari.claude-recall`
 - **Primary category:** Developer Tools
 - **Secondary category:** Productivity
 - **Age rating:** 4+ (no objectionable content)
@@ -20,7 +20,7 @@ Drop-in copy for App Store Connect when the time comes to submit.
 ## Description (4000 chars max)
 
 ```
-AI Memory Reader is the native macOS app for browsing every CLAUDE.md, AGENTS.md, and AI-agent memory file your AI coding assistants have written across your projects — beautifully rendered, instantly searchable, fast.
+Claude Recall is the native macOS app for browsing every CLAUDE.md, AGENTS.md, and AI-agent memory file your AI coding assistants have written across your projects — beautifully rendered, instantly searchable, fast.
 
 Built for engineers who use Claude Code, Codex, Cursor, Gemini, Continue, GitHub Copilot, Aider, or OpenClaw daily — and who are tired of opening these files in TextEdit one at a time.
 
@@ -40,7 +40,7 @@ KEY FEATURES
 
 • JSON / JSONL viewer — Pretty-prints Claude Code's `~/.claude/projects/*.json` NDJSON session telemetry. Chunked rendering so multi-MB transcripts don't crash anything.
 
-• URL scheme + CLI — Other tools can open files in AI Memory Reader via `aimemoryreader://open?path=…&heading=…` or the `aimr` CLI shell script. A companion Claude Code plugin ships the `/aimr` slash command.
+• URL scheme + CLI — Other tools can open files in Claude Recall via `clauderecall://open?path=…&heading=…` or the `crec` CLI shell script. A companion Claude Code plugin ships the upstream `/aimr` slash command (upstream-only).
 
 • Dark and light themes — Follows the system appearance.
 
@@ -70,14 +70,14 @@ claude,claude code,codex,cursor,gemini,markdown,memory,ai agent,llm,viewer
 ## What's New (release notes — first submission)
 
 ```
-First release on the App Store. AI Memory Reader has been on GitHub for several months as version 0.4.2; this is the same code, sandboxed for the App Store. See LICENSING.md in the repo for details.
+First release on the App Store. Claude Recall has been on GitHub for several months as version 0.4.2; this is the same code, sandboxed for the App Store. See LICENSING.md in the repo for details.
 ```
 
 ## URLs
 
-- **Marketing URL:** https://nvwalj.github.io/ai-memory-reader/
-- **Support URL:** https://github.com/nvwalj/ai-memory-reader/issues
-- **Privacy policy URL:** https://nvwalj.github.io/ai-memory-reader/privacy.html (write this before submission — see below)
+- **Marketing URL:** https://chrispelatari.github.io/Claude-recall/
+- **Support URL:** https://github.com/ChrisPelatari/Claude-recall/issues
+- **Privacy policy URL:** https://chrispelatari.github.io/Claude-recall/privacy.html (write this before submission — see below)
 
 ## Privacy policy (must be at the URL above before submission)
 
@@ -113,7 +113,7 @@ Hello reviewer,
 
 This app reads markdown and JSON files from user-selected folders. It has no network access, no telemetry, no third-party SDKs.
 
-It has been distributed as a GitHub release under GPL-3.0 since [date] (currently v0.4.2 as of this submission). The source code submitted here is identical to the public repository: https://github.com/nvwalj/ai-memory-reader. See LICENSING.md in the repo for the dual-license arrangement.
+It has been distributed as a GitHub release under GPL-3.0 since [date] (currently v0.4.2 as of this submission). The source code submitted here is identical to the public repository: https://github.com/ChrisPelatari/Claude-recall. See LICENSING.md in the repo for the dual-license arrangement.
 
 To test:
 1. Launch the app.
@@ -130,7 +130,7 @@ Thank you for reviewing.
 - [x] Replace auto-detection with NSOpenPanel + security-scoped bookmarks. **Done** in `BookmarkStore.swift` (commit `a9c6ebc`). The store no-ops in unsandboxed builds, so the GitHub-release ZIP is unaffected.
 - [x] Persist bookmark data in UserDefaults, restore on launch. **Done** — wired into `AppDelegate.applicationWillFinishLaunching`.
 - [x] "Grant access" affordance in sidebar empty state. **Done** — `SidebarView.emptyState` shows the new copy when `appState.needsSandboxGrant` is true.
-- [x] `privacy.html` published. **Done** — at https://nvwalj.github.io/ai-memory-reader/privacy.html.
+- [x] `privacy.html` published. **Done** — at https://chrispelatari.github.io/Claude-recall/privacy.html.
 - [ ] Generate 5 App Store screenshots at 2560×1600. (Best done by you running the app locally; AppleScript / `screencapture` route is brittle.)
 - [ ] Cut a fresh build with sandbox entitlements active and the privacy manifest bundled. **Blocked by signing** — requires Apple Developer team `LFUDWMQGY3` (Kollo Inc.) and a provisioning profile from Apple's servers, which Xcode fetches via Xcode → Settings → Accounts.
 - [ ] Test the app inside the sandbox end-to-end (exercise grant flow, open a folder, edit a file, watch a save, JSON viewer).
@@ -140,22 +140,22 @@ Thank you for reviewing.
 Once your Apple Developer team is added in Xcode → Settings → Accounts and a Mac App Distribution / Mac Installer Distribution cert exists in the keychain:
 
 ```bash
-cd ~/Project/ai-memory-reader      # adjust path
+cd ~/Project/claude-recall      # adjust path
 xcodegen generate
 
 xcodebuild \
-  -project AIMemoryReader.xcodeproj \
-  -scheme AIMemoryReader \
+  -project ClaudeRecall.xcodeproj \
+  -scheme ClaudeRecall \
   -configuration Release \
   -destination 'generic/platform=macOS' \
-  -archivePath build/AIMR.xcarchive \
+  -archivePath build/Claude Recall.xcarchive \
   ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO \
   CODE_SIGN_STYLE=Automatic \
   DEVELOPMENT_TEAM=LFUDWMQGY3 \
   archive
 
 # Then export as a Mac App Store .pkg:
-cat > /tmp/aimr-exportoptions.plist <<'EOF'
+cat > /tmp/crec-exportoptions.plist <<'EOF'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -170,12 +170,12 @@ EOF
 
 xcodebuild \
   -exportArchive \
-  -archivePath build/AIMR.xcarchive \
-  -exportOptionsPlist /tmp/aimr-exportoptions.plist \
-  -exportPath build/AIMR-export
+  -archivePath build/Claude Recall.xcarchive \
+  -exportOptionsPlist /tmp/crec-exportoptions.plist \
+  -exportPath build/Claude Recall-export
 
 # Upload to App Store Connect (xcrun altool is being deprecated; use notarytool's sibling Transporter command):
-xcrun altool --upload-app -f build/AIMR-export/*.pkg -t macos \
+xcrun altool --upload-app -f build/Claude Recall-export/*.pkg -t macos \
   -u <your-apple-id-email> -p '@keychain:AC_PASSWORD'
 
 # Or open Transporter.app from the App Store and drag the .pkg in.
@@ -185,7 +185,7 @@ xcrun altool --upload-app -f build/AIMR-export/*.pkg -t macos \
 
 1. Sign in at https://appstoreconnect.apple.com with the same Apple ID tied to the `LFUDWMQGY3` team.
 2. **My Apps → +** → **New App**.
-3. Platform: macOS. Name: `AI Memory Reader`. Primary language: English (US). Bundle ID: `com.aitools.ai-memory-reader` (must match `project.yml`). SKU: `aimr-001` (anything unique). User access: Full access. Click **Create**.
+3. Platform: macOS. Name: `Claude Recall`. Primary language: English (US). Bundle ID: `com.pelatari.claude-recall` (must match `project.yml`). SKU: `crec-001` (anything unique). User access: Full access. Click **Create**.
 4. Once created, fill in the listing using the copy in this file (description, keywords, support URL, marketing URL, privacy policy URL).
 5. **App Privacy → Edit** → answer "Data Not Collected." Save.
 6. **Pricing and Availability** → Free (or paid tier 5 / $4.99). Worldwide availability.

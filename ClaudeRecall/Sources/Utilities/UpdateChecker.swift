@@ -20,8 +20,8 @@ final class UpdateChecker {
 
     private(set) var state: State = .idle
 
-    private let owner = "nvwalj"
-    private let repo = "ai-memory-reader"
+    private let owner = "ChrisPelatari"
+    private let repo = "Claude-recall"
     private let dismissedKey = "updateChecker.dismissedVersions"
     private let lastCheckKey = "updateChecker.lastCheckAt"
     private let checkInterval: TimeInterval = 60 * 60 * 24 // 24h
